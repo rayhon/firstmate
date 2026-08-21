@@ -170,6 +170,10 @@ Only a named non-default branch checked out in `FM_ROOT` is a worktree tangle.
 If another live session holds the fleet lock, both surfaces keep the alarm but switch to read-only wording with no repair command.
 Ship briefs also tell the crewmate to verify `pwd -P` and `git rev-parse --show-toplevel` before creating `fm/<id>`, then stop with a blocked status if it landed in the primary checkout.
 
+Worktree isolation covers files, not listening ports, so parallel workers on one project can still collide on a shared dev-server port.
+Ship and scout briefs therefore carry a dev-server ports section: read the `.wt-env.json` manifest at the worktree root before starting a dev server and use its manifest port or its machine-unique offset instead of binding a project base port, falling back to the project instructions when that manifest is absent.
+`bin/fm-brief.sh`'s header owns the exact generated wording, and the tmux-worktrees skill owns the manifest and its schema.
+
 ## No-mistakes gate authority boundary
 
 Firstmate's own no-mistakes gate runs agents inside a checkout that also contains the fleet-captain identity in `AGENTS.md`, so gate execution needs an authority boundary separate from ordinary crewmate worktree isolation.
