@@ -302,6 +302,7 @@ EOF
 HERDR_SECTION=${HERDR_SECTION%$'\n'}
 fi
 
+# shellcheck disable=SC2016  # single quotes are deliberate: these lines are literal brief text whose backtick-wrapped paths and jq filters must reach the reading agent verbatim, not expand at scaffold time.
 WT_ENV_SECTION='# Dev-server ports
 Before starting any dev server, check `.wt-env.json` at the worktree root.
 If present, read its `services[]` entries for each service label, port, and command (e.g. with `jq -r '"'"'.services[]|"\(.label) \(.port) \(.cmd)"'"'"' .wt-env.json`), and its `offset` field for a machine-unique offset covering anything the manifest does not list (e.g. with `jq -r '"'"'.offset'"'"' .wt-env.json`).
