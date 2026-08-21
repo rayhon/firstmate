@@ -298,6 +298,12 @@ EOF
 HERDR_SECTION=${HERDR_SECTION%$'\n'}
 fi
 
+WT_ENV_SECTION='# Dev-server ports
+Before starting any dev server, check `.wt-env.json` at the worktree root.
+If present, `jq -r '"'"'.services[]|"\(.label) \(.port) \(.cmd)"'"'"' .wt-env.json` lists each service and its port; `jq -r '"'"'.offset'"'"' .wt-env.json` gives a machine-unique offset for anything the manifest does not list.
+Use the manifest port, or the project base port plus the offset - never bind a project base port directly.
+If `.wt-env.json` is absent the wiring hook did not run; fall back to the project instructions and note that in your status line.'
+
 if [ "$KIND" = scout ]; then
 cat > "$BRIEF" <<EOF
 You are a crewmate: an autonomous worker agent managed by firstmate. Work on your own; do not wait for a human.
@@ -312,6 +318,8 @@ You are in a disposable git worktree of $REPO, at a detached HEAD on a clean def
 This is a SCOUT task: the deliverable is a written report, not a PR.
 The worktree is your laboratory - install, run, edit, and make scratch commits freely; all of it is discarded at teardown.
 The report is the only thing that survives, so anything worth keeping must be in it.
+
+$WT_ENV_SECTION
 
 # Rules
 1. Never push to any remote and never open a PR.
@@ -426,6 +434,8 @@ The path check is authoritative: \`git rev-parse --git-dir\` and \`git rev-parse
 If the top-level path is the primary checkout or not the worktree you were launched in, STOP - do not branch or commit here - append \`blocked: launched in primary checkout, not an isolated worktree\` to the status file and stop.
 
 1. First action: create your branch: \`git checkout -b fm/$ID\`$SETUP2
+
+$WT_ENV_SECTION
 
 # Rules
 $RULE1

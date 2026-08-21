@@ -712,6 +712,26 @@ test_scout_and_secondmate_scaffold() {
   pass "fm-brief: scout and secondmate code paths still scaffold well-formed briefs"
 }
 
+test_dev_server_ports_section() {
+  local home brief
+  home="$TMP_ROOT/dev-ports-home"
+  mkdir -p "$home/data"
+
+  FM_HOME="$home" "$ROOT/bin/fm-brief.sh" ports-ship somerepo --mode no-mistakes >/dev/null 2>&1
+  brief="$home/data/ports-ship/brief.md"
+  assert_grep "# Dev-server ports" "$brief" "ship brief missing Dev-server ports heading"
+  assert_grep ".wt-env.json" "$brief" "ship brief missing .wt-env.json reference"
+  assert_grep "never bind a project base port directly" "$brief" "ship brief missing base-port warning"
+
+  FM_HOME="$home" "$ROOT/bin/fm-brief.sh" ports-scout somerepo --scout >/dev/null 2>&1
+  brief="$home/data/ports-scout/brief.md"
+  assert_grep "# Dev-server ports" "$brief" "scout brief missing Dev-server ports heading"
+  assert_grep ".wt-env.json" "$brief" "scout brief missing .wt-env.json reference"
+  assert_grep "never bind a project base port directly" "$brief" "scout brief missing base-port warning"
+
+  pass "fm-brief.sh: ship and scout briefs include the dev-server ports section"
+}
+
 test_script_parses
 test_no_heredoc_in_command_substitution
 test_help_includes_entire_header
@@ -730,5 +750,6 @@ test_secondmate_no_projects_charter
 test_secondmate_marked_request_reporting_contract
 test_secondmate_directory_paths_are_absolute_and_output_is_stable
 test_pause_verb_override_renders_all_brief_scaffolds
+test_dev_server_ports_section
 test_scout_and_secondmate_load_decision_hold_policy
 test_scout_and_secondmate_scaffold
