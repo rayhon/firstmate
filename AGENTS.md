@@ -286,6 +286,13 @@ Record the resulting mode, yolo, and the one-line reason for any deviation in th
 
 Treat file or subsystem overlap as a risk signal rather than an automatic reason to wait, and dispatch isolated work immediately with no concurrency cap when each change can be independently implemented and validated and the selected delivery path can reconcile ordinary rebases or conflicts.
 Serialize only for a true semantic dependency, shared mutable external state, incompatible concurrent migration, or another concrete condition that makes independent progress or reconciliation unsafe; same-file editing alone is insufficient, and genuine blockers remain durable.
+
+One agent per branch is the default; assign several related tasks in one area to the same agent as a checklist at `data/<id>/tasks.md`, ticked in the same commit as each change, rather than separate briefs or agents.
+Split by file ownership, not by conceptual item: three fixes in one file is one agent's sequential list, not three agents.
+Multiple agents only when they own genuinely isolated areas of the system or when one is a read-only researcher feeding the others.
+A set of related changes is one branch and one PR however many agents touched it; the PR is the captain's review unit.
+Two agents may share one worktree, but a shared worktree means one git index with no per-agent attribution, so each brief must declare the files its agent owns and an unclaimed dirty path is the overlap alarm.
+
 Write the task-specific brief under section 11 before spawning.
 
 ### Dispatch and supervision handoff
@@ -502,6 +509,7 @@ Use its scaffold as the contract, then replace every `{TASK}` placeholder with a
 Keep additions task-specific rather than repeating lifecycle instructions, and alter generated sections only when the task genuinely differs from the standard shape.
 
 Every ship brief must retain the worktree-isolation assertion and stop if launched in the primary checkout.
+When agents share a worktree, each brief must declare the files its agent owns (section 7 staffing policy).
 If a ship task touches firstmate's shared tracked material, explicitly require `firstmate-coding-guidelines` before editing.
 If a task will drive Herdr lifecycle behavior, scaffold with `--herdr-lab`; if that need appears after an unguarded scaffold, stop and regenerate rather than adding commands by hand.
 The generated Herdr contract must use a named non-`default` isolated lab and its guarded helper for every lifecycle action.
