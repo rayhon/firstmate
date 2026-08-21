@@ -717,13 +717,15 @@ test_dev_server_ports_section() {
   home="$TMP_ROOT/dev-ports-home"
   mkdir -p "$home/data"
 
-  FM_HOME="$home" "$ROOT/bin/fm-brief.sh" ports-ship somerepo --mode no-mistakes >/dev/null 2>&1
+  FM_HOME="$home" "$ROOT/bin/fm-brief.sh" ports-ship somerepo --mode no-mistakes >/dev/null 2>&1 ||
+    fail "fm-brief.sh: ship scaffold failed for the dev-server ports test"
   brief="$home/data/ports-ship/brief.md"
   assert_grep "# Dev-server ports" "$brief" "ship brief missing Dev-server ports heading"
   assert_grep ".wt-env.json" "$brief" "ship brief missing .wt-env.json reference"
   assert_grep "never bind a project base port directly" "$brief" "ship brief missing base-port warning"
 
-  FM_HOME="$home" "$ROOT/bin/fm-brief.sh" ports-scout somerepo --scout >/dev/null 2>&1
+  FM_HOME="$home" "$ROOT/bin/fm-brief.sh" ports-scout somerepo --scout >/dev/null 2>&1 ||
+    fail "fm-brief.sh: scout scaffold failed for the dev-server ports test"
   brief="$home/data/ports-scout/brief.md"
   assert_grep "# Dev-server ports" "$brief" "scout brief missing Dev-server ports heading"
   assert_grep ".wt-env.json" "$brief" "scout brief missing .wt-env.json reference"

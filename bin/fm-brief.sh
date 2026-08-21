@@ -49,6 +49,10 @@
 # declared-external-wait verb (FM_CLASSIFY_PAUSED_VERB, default "paused") from
 # "blocked:": pause for a known external wait expected to clear on its own,
 # blocked when firstmate must act.
+# Ship and scout scaffolds include a dev-server ports section: read the
+# .wt-env.json manifest at the worktree root before starting a dev server and use
+# its port or offset instead of a project base port. The tmux-worktrees skill owns
+# that manifest and its schema.
 # Ship tasks include a project-memory section so durable project-intrinsic
 # learnings can be committed to AGENTS.md through the project's delivery path;
 # it carries the AGENTS.md authoring bar (widely useful knowledge only, pointers
@@ -300,9 +304,9 @@ fi
 
 WT_ENV_SECTION='# Dev-server ports
 Before starting any dev server, check `.wt-env.json` at the worktree root.
-If present, `jq -r '"'"'.services[]|"\(.label) \(.port) \(.cmd)"'"'"' .wt-env.json` lists each service and its port; `jq -r '"'"'.offset'"'"' .wt-env.json` gives a machine-unique offset for anything the manifest does not list.
+If present, read its `services[]` entries for each service label, port, and command (e.g. with `jq -r '"'"'.services[]|"\(.label) \(.port) \(.cmd)"'"'"' .wt-env.json`), and its `offset` field for a machine-unique offset covering anything the manifest does not list (e.g. with `jq -r '"'"'.offset'"'"' .wt-env.json`).
 Use the manifest port, or the project base port plus the offset - never bind a project base port directly.
-If `.wt-env.json` is absent the wiring hook did not run; fall back to the project instructions and note that in your status line.'
+If `.wt-env.json` is absent the wiring hook did not run; fall back to the project instructions.'
 
 if [ "$KIND" = scout ]; then
 cat > "$BRIEF" <<EOF
