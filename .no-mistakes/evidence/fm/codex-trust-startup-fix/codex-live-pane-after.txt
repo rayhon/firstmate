@@ -1,0 +1,90 @@
+=== real Codex pane AFTER one Enter (t=120x0.5s) ===
+╭───────────────────────────────────────╮
+│ >_ OpenAI Codex (v0.154.0)            │
+│                                       │
+│ model:     loading   /model to change │
+│ directory: loading                    │
+╰───────────────────────────────────────╯
+
+
+› Ask Codex to do anything
+
+  ? for shortcuts
+╭────────────────────────────────────────────────────────╮
+│ >_ OpenAI Codex (v0.154.0)                             │
+│                                                        │
+│ model:       loading   /model to change                │
+│ directory:   /private/tmp/fm-codex-live.Sgjl7g/project │
+│ permissions: YOLO mode                                 │
+╰────────────────────────────────────────────────────────╯
+
+
+› Ask Codex to do anything
+
+  ? for shortcuts
+> You are in /private/tmp/fm-codex-live.Sgjl7g/project
+
+  Do you trust the contents of this directory? Working with untrusted contents comes with higher risk of prompt injection. Trusting the
+  directory allows project-local config, hooks, and exec policies to load.
+
+› 1. Yes, continue
+  2. No, quit
+
+  Press enter to continue
+╭────────────────────────────────────────────────────────╮
+│ >_ OpenAI Codex (v0.154.0)                             │
+│                                                        │
+│ model:       loading   /model to change                │
+│ directory:   /private/tmp/fm-codex-live.Sgjl7g/project │
+│ permissions: YOLO mode                                 │
+╰────────────────────────────────────────────────────────╯
+
+
+› Ask Codex to do anything
+
+  gpt-5.6-sol default · /private/tmp/fm-codex-live.Sgjl7g/project
+
+╭────────────────────────────────────────────────────────╮
+│ >_ OpenAI Codex (v0.154.0)                             │
+│                                                        │
+│ model:       gpt-5.6-sol medium   /model to change     │
+│ directory:   /private/tmp/fm-codex-live.Sgjl7g/project │
+│ permissions: YOLO mode                                 │
+╰────────────────────────────────────────────────────────╯
+
+  Tip: This is GPT-6, a new generation of intelligence. Astra is state-of-the-art in coding, computer use, science, and professional work.
+  Give it a hard problem, a half-formed idea, or anything you've been meaning to build. See where it takes you.
+
+
+› Reply exactly FM_CODEX_TRUST_OK and do nothing else
+
+
+• You have 3 usage limit resets available. Run /usage to use one.
+
+• Automatically switched to Luna Reserve medium due to usage limits.
+
+⚠ The context7 MCP server is not logged in. Run `codex mcp login context7`.
+
+⚠ MCP client for `rube` failed to start: MCP startup failed: handshaking with MCP server failed: Send message error Transport
+  [codex_rmcp_client::event_notification_transport::EventNotificationTransport<rmcp::transport::worker::WorkerTransport<rmcp::transport::str
+  eamable_http_client::StreamableHttpClientWorker<codex_rmcp_client::http_client_adapter::StreamableHttpClientAdapter>>>] error: Client
+  error: HTTP request failed: http/request failed: error sending request for url (https://rube.app/mcp), when send initialize request: Send
+  message error Transport
+  [codex_rmcp_client::event_notification_transport::EventNotificationTransport<rmcp::transport::worker::WorkerTransport<rmcp::transport::str
+  eamable_http_client::StreamableHttpClientWorker<codex_rmcp_client::http_client_adapter::StreamableHttpClientAdapter>>>] error: Client
+  error: HTTP request failed: http/request failed: error sending request for url (https://rube.app/mcp), when send initialize request
+
+⚠ MCP startup incomplete (failed: context7, rube)
+
+■ You've hit your usage limit. Upgrade to Pro (https://chatgpt.com/explore/pro), visit https://chatgpt.com/codex/settings/usage to purchase
+more credits or try again at 3:46 AM.
+
+
+  You’re now using Luna, a faster model for simpler tasks.
+  Use your reset to continue using the most advanced models, or wait for usage to reset after 03:46.
+
+› 1. Upgrade
+  2. Reset usage
+  3. Continue with Luna Reserve
+
+  Press enter to confirm or esc to continue working

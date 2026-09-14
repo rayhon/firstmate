@@ -1,0 +1,30 @@
+# Regression proof: new Codex startup-readiness gate
+
+## tests/fm-codex-trust.test.sh against PRE-CHANGE bin/fm-spawn.sh (b182d0f)
+not ok - Codex spawn reported success before the brief reached the working row
+FM_TEST_END tests/fm-codex-trust.test.sh exit=1 duration_ms=4288
+
+## tests/fm-codex-trust.test.sh against the change (6b8eba4)
+ok - fm-spawn: Codex accepts only the verified preselected trust choice and confirms processing
+ok - fm-spawn: Codex refuses changed and unsafe trust prompts without guessing
+ok - fm-spawn: an already-trusted Codex directory reaches its working turn with no trust answer
+ok - fm-spawn: a persistent Codex trust prompt refuses without looping
+FM_TEST_END tests/fm-codex-trust.test.sh exit=0
+
+# Regression found in this run: tests/fm-tangle-guard.test.sh
+
+## at base b182d0f (pre-change fm-spawn.sh)
+FM_TEST_END tests/fm-tangle-guard.test.sh exit=0 duration_ms=17414
+
+## at target 6b8eba4, before this run's test fix
+not ok - spawn into a genuine worktree should succeed: expected exit 0, got 1
+FM_TEST_END tests/fm-tangle-guard.test.sh exit=1 duration_ms=125706
+
+## at target 6b8eba4, after adding the capture-pane arm to make_spawn_record_fakebin
+ok - fm-spawn: appends windows by session-colon, pins the name, and targets the window id
+FM_TEST_END tests/fm-tangle-guard.test.sh exit=0 duration_ms=17914
+
+# Pre-existing, unrelated to this change (fail identically at base b182d0f)
+not ok - fm-harness.sh under process 'muse-bin-0.1.0-R708.1' reported '', expected muse   (tests/fm-muse-harness.test.sh)
+not ok - omp watch extension contract                                                     (tests/fm-omp-harness.test.sh)
+not ok - Herdr pane state unknown should map to unreadable, got 'missing'                 (tests/fm-secondmate-liveness.test.sh)

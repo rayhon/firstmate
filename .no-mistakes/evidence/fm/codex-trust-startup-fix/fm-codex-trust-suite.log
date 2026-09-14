@@ -1,0 +1,5 @@
+ok - fm-spawn: Codex accepts only the verified preselected trust choice and confirms processing
+ok - fm-spawn: Codex refuses changed and unsafe trust prompts without guessing
+ok - fm-spawn: an already-trusted Codex directory reaches its working turn with no trust answer
+ok - fm-spawn: a persistent Codex trust prompt refuses without looping
+# all fm-codex-trust tests passed

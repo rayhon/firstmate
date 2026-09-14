@@ -1,0 +1,6 @@
+spawn-exit-code: 1
+error: Codex did not show a verified ready turn for the supplied brief in window firstmate:fm-codex-realtmux-95618; inspect window firstmate:fm-codex-realtmux-95618
+window-list:
+1: idle* (1 panes) [140x40] [layout ab7d,140x40,0,0,0] @0 (active)
+final-real-tmux-pane:
+can't find window: fm-codex-realtmux-95618

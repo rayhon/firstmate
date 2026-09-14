@@ -1,0 +1,34 @@
+╭───────────────────────────────────────╮
+│ >_ OpenAI Codex (v0.154.0)            │
+│                                       │
+│ model:     loading   /model to change │
+│ directory: loading                    │
+╰───────────────────────────────────────╯
+
+
+› Ask Codex to do anything
+
+  ? for shortcuts
+╭──────────────────────────────────────────────────────────╮
+│ >_ OpenAI Codex (v0.154.0)                               │
+│                                                          │
+│ model:       loading   /model to change                  │
+│ directory:   /private/tmp/fm-codex-narrow.Fxjopn/project │
+│ permissions: YOLO mode                                   │
+╰──────────────────────────────────────────────────────────╯
+
+
+› Ask Codex to do anything
+
+  ? for shortcuts
+> You are in /private/tmp/fm-codex-narrow.Fxjopn/project
+
+  Do you trust the contents of this directory? Working with
+  untrusted contents comes with higher risk of prompt
+  injection. Trusting the directory allows project-local
+  config, hooks, and exec policies to load.
+
+› 1. Yes, continue
+  2. No, quit
+
+  Press enter to continue

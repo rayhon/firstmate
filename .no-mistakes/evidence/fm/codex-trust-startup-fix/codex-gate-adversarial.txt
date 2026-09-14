@@ -1,0 +1,20 @@
+=== mode=echoed-menu rc=0 ===
+spawned codex-adv-echoed-menu-43547 harness=codex kind=ship mode=no-mistakes yolo=off window=firstmate:fm-codex-adv-echoed-menu-43547 worktree=/private/var/folders/f1/7ppq4t8d2nv054ky933dvdz40000gp/T/fm-codex-adv-echoed-menu.IbXeGe/wt
+pane-the-gate-saw:
+› Task: fix Codex trust handling.
+› The dialog reads: Do you trust the contents of this directory?
+› 1. Yes, continue
+  2. No, quit
+
+• Working (3s • esc to interrupt)
+kill-window-count: 0
+bare-enter-count: 2
+
+=== mode=minute-working rc=0 ===
+spawned codex-adv-minute-working-43544 harness=codex kind=ship mode=no-mistakes yolo=off window=firstmate:fm-codex-adv-minute-working-43544 worktree=/private/var/folders/f1/7ppq4t8d2nv054ky933dvdz40000gp/T/fm-codex-adv-minute-working.V0b87l/wt
+pane-the-gate-saw:
+› synthetic launch instructions
+
+• Working (1m02s • esc to interrupt)
+kill-window-count: 0
+bare-enter-count: 1

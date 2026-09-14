@@ -1,0 +1,9 @@
+== scene=silent lab=/var/folders/f1/7ppq4t8d2nv054ky933dvdz40000gp/T//fm-codex-adv.BnKdCZ id=codex-adv-silent-69332
+warning: /var/folders/f1/7ppq4t8d2nv054ky933dvdz40000gp/T//fm-codex-adv.BnKdCZ/fmhome/data/codex-adv-silent-69332/launch-brief.md records no delivery contract line (scaffolded before ship briefs recorded one); launching on the explicit --mode no-mistakes - confirm its definition of done matches
+error: Codex did not show a verified ready turn for the supplied brief in window firstmate:fm-codex-adv-silent-69332; inspect window firstmate:fm-codex-adv-silent-69332
+== fm-spawn rc=1
+== keys Firstmate sent into the codex pane:
+== windows still alive on the fleet server:
+win: firstmate:0: zsh* (1 panes) [80x24] 
+== task status file:
+failed: Codex did not show a verified ready turn for the supplied brief in window firstmate:fm-codex-adv-silent-69332

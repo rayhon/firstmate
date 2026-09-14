@@ -1,0 +1,6 @@
+error: no-mistakes gate agent must not drive the fleet (NO_MISTAKES_GATE set)
+fm-spawn rc=3
+--- windows ---
+firstmate:1: main* (1 panes) [160x45] 
+--- pane ---
+can't find pane: fm-live-codex-trust-24807
