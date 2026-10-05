@@ -1,0 +1,44 @@
+# live run at commit 47bb003, lab home /var/folders/f1/7ppq4t8d2nv054ky933dvdz40000gp/T//fm-lab.QCoqq9, real gh (no fake)
+$ gh auth status (accounts / active)
+✓ Logged in to github.com account rayhon (keyring)
+- Active account: true
+✓ Logged in to github.com account contextforce (keyring)
+- Active account: false
+✓ Logged in to github.com account rayhon1014 (keyring)
+- Active account: false
+$ gh api repos/contextforce/agent-board/pulls/35  # as active account
+{"message":"Not Found","documentation_url":"https://docs.github.com/rest/pulls/pulls#get-a-pull-request","status":"404"}gh: Not Found (HTTP 404)
+$ cat data/backlog.md
+# Backlog
+
+## Queued
+- [ ] ab-35 - Contribution https://github.com/contextforce/agent-board/pull/35 (repo: agent-board) (kind: ship)
+- [ ] ab-56 - Contribution https://github.com/contextforce/agent-board/pull/56 (repo: agent-board) (kind: ship)
+- [ ] ab-57 - Contribution https://github.com/contextforce/agent-board/pull/57 (repo: agent-board) (kind: ship)
+- [ ] nx-1 - Contribution https://github.com/contextforce/fm-no-such-repo-xyz/pull/1 (repo: none) (kind: ship)
+
+== A. flag absent (default): fm-contributions.sh poll
+contributions: observation unavailable for https://github.com/contextforce/agent-board/pull/35
+contributions: observation unavailable for https://github.com/contextforce/agent-board/pull/56
+contributions: observation unavailable for https://github.com/contextforce/agent-board/pull/57
+contributions: observation unavailable for https://github.com/contextforce/fm-no-such-repo-xyz/pull/1
+rc=0
+
+$ touch config/contributions-owner-account
+== B1. flag present: fm-contributions.sh poll
+rc=0
+== B2. flag present: fm-contributions.sh poll
+rc=0
+== B3. flag present: fm-contributions.sh poll
+rc=0
+
+== persisted records
+{"url":"https://github.com/contextforce/agent-board/pull/35","error":null,"state":"merged","can_merge":false}
+{"url":"https://github.com/contextforce/agent-board/pull/56","error":null,"state":"closed","can_merge":false}
+{"url":"https://github.com/contextforce/agent-board/pull/57","error":null,"state":"closed","can_merge":false}
+{"url":"https://github.com/contextforce/fm-no-such-repo-xyz/pull/1","error":"forge observation unavailable or changed during read","state":null,"can_merge":null}
+
+== active account unchanged
+✓ Logged in to github.com account rayhon (keyring)
+== owner token persisted anywhere in lab home?
+no
