@@ -1,23 +1,27 @@
-### active gh account: rayhon1014
-
-### BEFORE (base f470a01) poll #1
-contributions: observation unavailable for https://github.com/contextforce/agent-board/pull/35
+### gh active account: rayhon
+### BASE (f470a01) poll x3 against real GitHub
+-- poll 1 (exit:
 contributions: observation unavailable for https://github.com/contextforce/agent-board/pull/56
 contributions: observation unavailable for https://github.com/contextforce/agent-board/pull/57
-exit=0
-
-### AFTER (target b5ac688) poll #1
-exit=0
-
-### AFTER poll #2 (merged/closed are final, no re-read)
-exit=0
-
-### AFTER persisted records
-{"url":"https://github.com/contextforce/agent-board/pull/35","error":null,"state":"merged","merged":null,"checked_at":"2026-10-05T01:03:52Z"}
-{"url":"https://github.com/contextforce/agent-board/pull/56","error":null,"state":"closed","merged":null,"checked_at":"2026-10-05T01:03:52Z"}
-{"url":"https://github.com/contextforce/agent-board/pull/57","error":null,"state":"closed","merged":null,"checked_at":"2026-10-05T01:03:52Z"}
-
-### active gh account after polls: rayhon1014
-
-### owner token leaked into home? 
-none
+contributions: observation unavailable for https://github.com/contextforce/agent-board/pull/35
+rc=0)
+-- poll 2 (exit:
+rc=0)
+-- poll 3 (exit:
+rc=0)
+### base records:
+{"url":"https://github.com/contextforce/agent-board/pull/35","error":"forge observation unavailable or changed during read","state":null}
+{"url":"https://github.com/contextforce/agent-board/pull/56","error":"forge observation unavailable or changed during read","state":null}
+{"url":"https://github.com/contextforce/agent-board/pull/57","error":"forge observation unavailable or changed during read","state":null}
+### TARGET (99c4a45) poll x3 against real GitHub
+-- poll 1
+rc=0
+-- poll 2
+rc=0
+-- poll 3
+rc=0
+### target records:
+{"url":"https://github.com/contextforce/agent-board/pull/35","error":null,"state":"merged","can_merge":false,"head":"dd63cb43730a4131367c29ef926db882ec494bb9"}
+{"url":"https://github.com/contextforce/agent-board/pull/56","error":null,"state":"closed","can_merge":false,"head":"12d98a3b33712b0039825325530bd16e05e8a98e"}
+{"url":"https://github.com/contextforce/agent-board/pull/57","error":null,"state":"closed","can_merge":false,"head":"8ad65fef840f57676fa4f61cefa23571c458a42c"}
+### wake queue files:

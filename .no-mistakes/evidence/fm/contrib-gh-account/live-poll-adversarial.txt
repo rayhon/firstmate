@@ -1,0 +1,11 @@
+### ADVERSARIAL: 404 repo whose owner has no logged-in gh account (target code)
+-- poll 1
+contributions: observation unavailable for https://github.com/anthropics/fm-nonexistent-private-zz9/pull/1
+rc=0
+-- poll 2
+rc=0
+{"url":"https://github.com/anthropics/fm-nonexistent-private-zz9/pull/1","error":"forge observation unavailable or changed during read","state":null}
+### state dirs (wake queue) base vs new:
+### active account after all polls: rayhon
+### token leak scan (gho_/ghp_ in outputs/records):
+none
