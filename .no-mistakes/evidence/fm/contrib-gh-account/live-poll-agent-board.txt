@@ -1,0 +1,23 @@
+### active gh account: rayhon1014
+
+### BEFORE (base f470a01) poll #1
+contributions: observation unavailable for https://github.com/contextforce/agent-board/pull/35
+contributions: observation unavailable for https://github.com/contextforce/agent-board/pull/56
+contributions: observation unavailable for https://github.com/contextforce/agent-board/pull/57
+exit=0
+
+### AFTER (target b5ac688) poll #1
+exit=0
+
+### AFTER poll #2 (merged/closed are final, no re-read)
+exit=0
+
+### AFTER persisted records
+{"url":"https://github.com/contextforce/agent-board/pull/35","error":null,"state":"merged","merged":null,"checked_at":"2026-10-05T01:03:52Z"}
+{"url":"https://github.com/contextforce/agent-board/pull/56","error":null,"state":"closed","merged":null,"checked_at":"2026-10-05T01:03:52Z"}
+{"url":"https://github.com/contextforce/agent-board/pull/57","error":null,"state":"closed","merged":null,"checked_at":"2026-10-05T01:03:52Z"}
+
+### active gh account after polls: rayhon1014
+
+### owner token leaked into home? 
+none

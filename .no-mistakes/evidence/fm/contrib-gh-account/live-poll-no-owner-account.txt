@@ -1,0 +1,8 @@
+### ADVERSARIAL: unreadable repo whose owner has no logged-in gh account (target b5ac688)
+-- poll #1
+contributions: observation unavailable for https://github.com/nm-no-such-owner-zz9/private-repo/pull/1
+exit=0
+-- poll #2
+exit=0
+{"url":"https://github.com/nm-no-such-owner-zz9/private-repo/pull/1","error":"forge observation unavailable or changed during read"}
+active gh account: rayhon1014
